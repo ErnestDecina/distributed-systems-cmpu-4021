@@ -1,0 +1,28 @@
+You should create a .bat file (e.g. lab_env.bat) with the content analog to this:
+
+
+rem Java 17
+REM set PATH=C:\Program Files\Java\jdk-1.17\bin;C:\Software\Python\Python312
+set CLASSPATH=C:\Program Files\Java\jdk-1.17\bin
+set CLASSPATH=%CLASSPATH%;.
+
+
+To setup environment for Python. you will need to add the folder where Python is installed to the PATH variable
+You can add to the PATH like this:
+set PATH=C:\Program Files\Java\jdk1.17\bin;C:\Python\Python312\bin
+
+
+or
+set PATH=%PATH%;C:\Python
+
+You need to find out exact path and Java version that is running on your machine and write it instead of 'jdk-1.17'.
+The same for Python.
+
+You can also setup the Environment Variables (on Windows11) using
+
+System-> About->Advanced system settings->Environment Variables
+
+
+
+
+For MAC users: you may need to use colon ‘:’ instead of  semicolon ‘;’

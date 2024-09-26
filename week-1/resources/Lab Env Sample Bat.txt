@@ -1,0 +1,6 @@
+rem you need to adjust the directory path for java and python
+rem Java 17
+REM set PATH=C:\Program Files\Java\jdk-1.17\bin;C:\Software\Python\Python312
+set CLASSPATH=C:\Program Files\Java\jdk-1.8\bin
+set CLASSPATH=%CLASSPATH%;.
+

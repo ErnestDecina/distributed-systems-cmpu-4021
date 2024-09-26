@@ -1,0 +1,53 @@
+
+
+Examples in Labs:
+
+a) Examples in Labs are created and tested on Windows. To run it on MAC you will need to substitute semicolons ';' with colons':' for any directory path.
+
+
+
+
+b) Setting up MAC JDK environment in terminal
+
+1. Determine where java lives.
+
+running 
+
+$/usr/libexec/java_home 
+
+might tell you. It may return /Library/Java/JavaVirtualMachines/17.0.11.jdk/Contents/Home
+On your machine it might be different.
+
+
+2. If JAVA_HOME is found, then you could use:
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=$JAVA_HOME/jre/lib:.
+
+
+Otherwise, once you know the path where JDK is installed, you'll have to hard wire, as follows:
+
+export PATH=$PATH:/Library/Java/JavaVirtualMachines/17.0.11.jdk/Contents/Home/bin
+export CLASSPATH=/Library/Java/JavaVirtualMachines/17.0.11.jdk/Contents/Home/jre/lib:.
+
+
+3. Put the commands from the part 2 into a file setup_java or setup_java.sh
+
+Then, either:
+3.1) 
+
+ $chmod +x setup_java 
+ 
+ and then run
+ 
+ $./setup_java
+ 
+
+or,
+3.2)
+
+ $source setup_java
+
+
+To setup evironment for Python, you will need to add the the folder where Python is installed to the PATH variable
