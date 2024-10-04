@@ -15,6 +15,7 @@ public class MulticastNetworkInterfaces {
         try {
             Enumeration<NetworkInterface> networkInterfaces;
             networkInterfaces = NetworkInterface.getNetworkInterfaces();
+
             for (NetworkInterface networkInterface : Collections.list(networkInterfaces)) {
                 displayNetworkInterfaceInformation(networkInterface);
             }
@@ -25,9 +26,10 @@ public class MulticastNetworkInterfaces {
     }
     static void displayNetworkInterfaceInformation(NetworkInterface networkInterface) {
         try {
-            System.out.printf("Display name: %s\n", networkInterface.getDisplayName());
-            System.out.printf("Name: %s\n", networkInterface.getName());
-            System.out.printf("Supports Multicast: %s\n", networkInterface.supportsMulticast());
+            System.out.printf("Display name: %s\n",         networkInterface.getDisplayName());
+            System.out.printf("Name: %s\n",                 networkInterface.getName());
+            System.out.printf("Supports Multicast: %s\n",   networkInterface.supportsMulticast());
+            
             Enumeration<InetAddress> inetAddresses = networkInterface.getInetAddresses();
             for (InetAddress inetAddress : Collections.list(inetAddresses)) {
                 System.out.printf("InetAddress: %s\n", inetAddress);

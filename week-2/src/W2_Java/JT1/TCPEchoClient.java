@@ -11,18 +11,18 @@ public class TCPEchoClient
 	{
 		try
 		{
-			host = InetAddress.getLocalHost();
+			// host = InetAddress.getLocalHost();
 				    
 			// Or, if you know host name and IP address you can use the following lines
 			// Replace ipAddr, and localhost values
-			/*
-			byte[] ipAddr = new byte[] { 127, 0, 0, 1 };  
+			
+			byte[] ipAddr = new byte[] { (byte)157, (byte)173, 98, 42 };  // 157.173.98.42
 			
 			// if your address conatains number greater than >128 you need to use (byte), for example
 			// byte[] ipAddr = new byte[] { 101, 21, (byte)224, (byte)176 }; 
 			
-            host = InetAddress.getByAddress("localhost",ipAddr);  
-			*/
+            host = InetAddress.getByAddress("localhost", ipAddr);  
+			
 			
 		}
 		catch(UnknownHostException uhEx)

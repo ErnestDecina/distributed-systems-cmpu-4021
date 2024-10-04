@@ -42,20 +42,28 @@ public class UDPEchoClient
 				if (!message.equals("***CLOSE***"))
 				{
 					outPacket = new DatagramPacket(
-									message.getBytes(),
-									message.length(),
-									host,PORT);		//Step 2.
+						message.getBytes(),
+						message.length(),
+						host,PORT
+					);		//Step 2.
+
 					datagramSocket.send(outPacket);	//Step 3.
+
 					buffer = new byte[256];			//Step 4.
-					inPacket =
-						new DatagramPacket(
-							buffer, buffer.length); //Step 5.
+					inPacket = new DatagramPacket(
+							buffer, 
+							buffer.length
+					); //Step 5.
+
+
 					datagramSocket.receive(inPacket);	//Step 6.
-					response =
-						new String(inPacket.getData(),
-					   		0, inPacket.getLength());//Step 7.
-					System.out.println(
-							"\nSERVER> " + response);
+					response = new String(
+						inPacket.getData(),
+					   	0, 
+						inPacket.getLength()
+					);//Step 7.
+
+					System.out.println("\nSERVER> " + response);
 				}
 			}while (!message.equals("***CLOSE***"));
 		}
